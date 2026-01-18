@@ -1,0 +1,31 @@
+# =========================
+# Java
+# =========================
+*.class
+
+# Build / output folders
+bin/
+out/
+target/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# =========================
+# OS / temp files
+# =========================
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# =========================
+# Archives
+# =========================
+*.jar
+*.war
+*.ear
