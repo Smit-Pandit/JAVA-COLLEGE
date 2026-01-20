@@ -1,4 +1,4 @@
-// package lab2;
+package com.lab2;
 import java.util.Scanner;
 class Amount{
     double hours;
@@ -18,12 +18,13 @@ class Amount{
 public class charge {
     public static void main(String[] args){
         Amount A = new Amount();
-        Scanner input = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the hours parked: ");
-        A.hours = input.nextDouble();
+        A.hours = sc.nextDouble();
         System.out.print("Enter Total car parked Yesterday: ");
-        A.TotalCar = input.nextInt();
+        A.TotalCar = sc.nextInt();
         System.out.println("Parking Charges: "+A.Calculate());
-        System.out.println("Yesterday custumber: "+A.TotalCar);
+        System.out.println("Yesterday's customer: "+A.TotalCar);
+        sc.close();
     }
 }

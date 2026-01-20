@@ -1,4 +1,4 @@
-package lab1;
+package com.lab1;
 // Write an application that inputs one number consisting of five digits from the user, separate the number into
 // its individual digits and print the digit separates from one another for three spaces each. for example if the user
 

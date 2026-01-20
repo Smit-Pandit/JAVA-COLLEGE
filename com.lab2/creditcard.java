@@ -21,6 +21,7 @@ public class creditcard {
         int limit = sc.nextInt();
         checker c = new checker(acc, bal, charge, credit, limit);
         c.checklimit();
+        sc.close();
     }
 }
 class checker{
@@ -35,9 +36,9 @@ class checker{
     void checklimit(){
         int newbal = bal + charge - credit;
         if(newbal > limit){
-            System.out.println("Credit limit exceeded.");
+            System.out.println("Account " + acc + ": Credit limit exceeded.");
         }else{
-            System.out.println("Remaining balance : " + (limit - newbal));
+            System.out.println("Account " + acc + ": Remaining balance : " + (limit - newbal));
         }
     }
 }

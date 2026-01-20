@@ -8,15 +8,17 @@ public class gas {
         double tmiles = 0;
         double fule = 0;
         double miles = 0;
+        System.out.println("Enter miles driven (-1 to stop): ");
+        miles = sc.nextDouble();
         while (miles != -1) {
-            System.out.println("Enter miles driven (-1 to stop): ");
-            miles = sc.nextDouble();
             System.out.println("Enter gallons : ");
             double gallons = sc.nextDouble();
             gasmileage g = new gasmileage(miles, gallons);
             System.out.println("Miles per gallon for this trip: " + g.mpg());
             tmiles += miles;
             fule += gallons;
+            System.out.println("Enter miles driven (-1 to stop): ");
+            miles = sc.nextDouble();
         }
         System.out.println("Combined miles per gallon: " + (tmiles/fule));
         sc.close();

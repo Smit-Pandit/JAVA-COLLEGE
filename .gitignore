@@ -2,7 +2,8 @@
 # Java
 # =========================
 *.class
-
+*.iml
+*.gitignore
 # Build / output folders
 bin/
 out/
@@ -14,7 +15,6 @@ target/
 .vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
-
 # =========================
 # OS / temp files
 # =========================
