@@ -16,6 +16,7 @@ public class multilevel {
         int j = sc.nextInt();
         Z l = new Z(i,j);
         System.out.println("DIFF IS : " + l.finalDiff(i, j) + "\nSUM IS " + l.finalSum(i, j) + "\nPRODUCT IS " + l.finalProduct(i, j));
+        sc.close();
     }
 }
 class X{
