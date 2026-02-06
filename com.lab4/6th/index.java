@@ -14,9 +14,9 @@ public class index {
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the number of values you want to enter: ");
         int x = s.nextInt();
-        int arr[]={1,2,5,6,8,47,96};
+        int []arr = new int[x];
         for(int i=0;i<x;i++){
-            System.out.println(i+": ");
+            System.out.print(i+": ");
             arr[i] = s.nextInt();
         }
         client nx = new client(arr);
