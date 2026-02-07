@@ -1,7 +1,4 @@
-
 import java.util.Scanner;
-
-
 // 1. Name of the fruit.
 // 2. Single fruit or bunch fruit.
 // 3. Price.

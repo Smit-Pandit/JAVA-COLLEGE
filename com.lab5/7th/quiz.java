@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 //submitted answers are specifies as program arguments. Let X represents a question that was not answered on the quiz.
@@ -8,10 +9,11 @@ enum Result {
     WRONG,
     UNANSWERED
 }
+
 public class quiz {
+
     public static void main(String[] args) {
         final int size = 8;
-        Result r;
         Scanner s = new Scanner(System.in);
         char[] correct = {'C', 'A', 'B', 'D', 'B', 'C', 'C', 'A'};
         char[] answers = new char[8];
@@ -22,31 +24,44 @@ public class quiz {
             char ans = s.nextLine().toUpperCase().charAt(0);
             if (ans == 'X') {
                 answers[i] = 'X';
-                r = Result.UNANSWERED;
                 NotAnswered++;
             } else if (ans >= 'A' && ans <= 'D') {
                 answers[i] = ans;
                 if (correct[i] == ans) {
-                    r = Result.CORRECT;
                     Correct++;
                 } else {
-                    r = Result.WRONG;
                     Wrong++;
                 }
             } else {
                 answers[i] = 'X';
-                r = Result.UNANSWERED;
                 NotAnswered++;
             }
-            System.out.printf("%-9d %-10c %-8c %-10s%n", (i + 1), answers[i], correct[i], r);
         }
+        display(answers,correct);
         System.out.println("No. of correct answers: " + Correct);
         System.out.println("No. of wrong answers: " + Wrong);
         System.out.println("No. of questions unanswered: " + NotAnswered);
-        if (Correct >= 5)
+        if (Correct >= 5) {
             System.out.println("RESULT: PASS");
-        else
+        } else {
             System.out.println("RESULT: FAIL");
+        }
         s.close();
+    }
+
+    public static void display(char[] answers, char[] correct) {
+        Result r;
+        for (int i = 0; i < answers.length; i++) {
+            if (answers[i] == 'X') {
+                r = Result.UNANSWERED;
+            } else {
+                if (correct[i] == answers[i]) {
+                    r = Result.CORRECT;
+                } else {
+                    r = Result.WRONG;
+                }
+            }
+            System.out.printf("%-9d %-10c %-8c %-10s%n", (i + 1), answers[i], correct[i], r);
+        }
     }
 }

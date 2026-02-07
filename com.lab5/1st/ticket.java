@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 import java.util.Scanner;
 // Image a queue of people standing at the bus stand to buy tickets .whenever a person buys a ticket,he leaves
@@ -88,7 +87,7 @@ class QueueDemo implements QueueImpl {
         }
 
         System.out.print("Queue: ");
-        for (int j = 0; j < i; j++) {
+        for (int j = 0; j < queue.length; j++) {
             System.out.print(queue[j] + " ");
         }
         System.out.println();
