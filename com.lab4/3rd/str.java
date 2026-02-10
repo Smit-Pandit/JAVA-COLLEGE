@@ -11,6 +11,7 @@ public class str {
             System.out.print("Enter n : ");
             int n = s.nextInt();
             int x;
+            boolean t = false;
             s.nextLine();
             System.out.print("Enter the string : ");
             String str = s.nextLine();
@@ -24,10 +25,10 @@ public class str {
                 }
                 if (x >= n) {
                     System.out.println(a[i] + " exceeds the limit");
-                    return;
+                    t = true;
                 }
             }
-            System.out.println("All Good");
+            if(!t){System.out.println("All Good");}
             s.close();
         }
         catch (Exception e) {

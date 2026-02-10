@@ -60,6 +60,9 @@ public class password {
                 System.out.println("It works");
             }
         }
+        else{
+            System.out.println("Enter a valid password");
+        }
         s.close();
     }
 }

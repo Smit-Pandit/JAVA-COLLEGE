@@ -16,7 +16,7 @@ public class index {
         int x = s.nextInt();
         int []arr = new int[x];
         for(int i=0;i<x;i++){
-            System.out.print(i+": ");
+            System.out.print((i+1)+": ");
             arr[i] = s.nextInt();
         }
         client nx = new client(arr);
