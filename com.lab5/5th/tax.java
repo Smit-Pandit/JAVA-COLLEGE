@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 // Utopias tax accountants always use programs that compute income taxes even though the tax rate is a solid,
 // never- changing 15%.Define the program calculate Tax which determines the tax on the gross pay. Define
@@ -14,7 +15,7 @@ public class tax {
             UtopiasTax pay = new UtopiasTax(H);
             System.out.println("The Net Payment is : " + pay.netPay() + "$");
             s.close();
-        }catch(NumberFormatException e){
+        }catch(InputMismatchException e){
             System.out.println("Enter a valid Number");
         }
     }
