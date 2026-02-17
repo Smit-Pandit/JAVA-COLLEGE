@@ -32,6 +32,8 @@ public class Item {
                 f.displayFruit();
             }
             s.close();
+        }catch(NumberFormatException e){
+            System.out.println("Invalid name");
         }
     }
 }
