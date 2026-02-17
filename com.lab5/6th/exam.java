@@ -24,7 +24,6 @@ public class exam {
             System.out.println("Enter a valid number");
         }
     }
-
 }
 
 class student {
