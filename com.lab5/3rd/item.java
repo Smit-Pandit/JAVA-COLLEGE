@@ -7,29 +7,30 @@ import java.util.Scanner;
 public class Item {
 
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        System.out.print("Enter Product ID : ");
-        int PID = s.nextInt();
-        System.out.print("Enter Category ID : ");
-        int CID = s.nextInt();
-        System.out.print("Enter Unit Price : ");
-        int UP = s.nextInt();
-        System.out.print("Enter Voltage Range : ");
-        int VR = s.nextInt();
-        System.out.print("Enter Wattage : ");
-        int W = s.nextInt();
-        ElectricalProduct EP = new ElectricalProduct(PID, CID, UP, VR, W);
-        System.out.println("");
-        EP.Display();
-        System.out.println("Enter Unit Price (new) : ");
-        int x = s.nextInt();
-        EP.setUnitPrice(x);
-        System.out.println("Enter Wattage (new) : ");
-        int y = s.nextInt();
-        EP.setWattage(y);
-        System.out.println("\nUpdated Details\n");
-        EP.Display();
-        s.close();
+        try (Scanner s = new Scanner(System.in)) {
+            System.out.print("Enter Product ID : ");
+            int PID = s.nextInt();
+            System.out.print("Enter Category ID : ");
+            int CID = s.nextInt();
+            System.out.print("Enter Unit Price : ");
+            int UP = s.nextInt();
+            System.out.print("Enter Voltage Range : ");
+            int VR = s.nextInt();
+            System.out.print("Enter Wattage : ");
+            int W = s.nextInt();
+            ElectricalProduct EP = new ElectricalProduct(PID, CID, UP, VR, W);
+            System.out.println("");
+            EP.Display();
+            System.out.println("Enter Unit Price (new) : ");
+            int x = s.nextInt();
+            EP.setUnitPrice(x);
+            System.out.println("Enter Wattage (new) : ");
+            int y = s.nextInt();
+            EP.setWattage(y);
+            System.out.println("\nUpdated Details\n");
+            EP.Display();
+            s.close();
+        }
     }
 }
 
