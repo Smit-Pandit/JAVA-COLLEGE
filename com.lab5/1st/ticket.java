@@ -13,10 +13,10 @@ public class ticket {
 
     public static void main(String[] args) throws Exception {
         try (Scanner s = new Scanner(System.in)) {
-            final int size = 10;
+            final int size = 10; //given
             char[] queue = new char[size];
-            boolean val = true;
-            Arrays.fill(queue, 'N');
+            boolean val = true; //for exiting program
+            Arrays.fill(queue, 'N'); // N = empty
             QueueDemo x = new QueueDemo(queue);
             System.out.println("Menu\n1 : Insert\n2 : Delete\n3 : Display\n0 : Exit");
             while (val) {
@@ -35,7 +35,7 @@ public class ticket {
                     case 3 ->
                         x.display();
                     default ->
-                        throw new AssertionError();
+                        throw new AssertionError("Invalid number");
                 }
             }
         } catch (IndexOutOfBoundsException x) {
@@ -65,7 +65,7 @@ class QueueDemo implements QueueImpl {
     @Override
     public void insert() throws Exception {
         if (i == 10) {
-            throw new Exception("Queue Overflow horaha hai");
+            throw new Exception("Queue Overflow horaha hai"); //exception
         }
         queue[i++] = 'P';
     }
@@ -73,7 +73,7 @@ class QueueDemo implements QueueImpl {
     @Override
     public void delete() throws Exception {
         if (i == 0) {
-            throw new Exception("Queue Underflow horaha hai");
+            throw new Exception("Queue Underflow horaha hai"); //exception
         }
         queue[--i] = 'N';
     }

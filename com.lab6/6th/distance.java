@@ -11,22 +11,23 @@ import java.util.Scanner;
 public class distance {
 
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        point3D P1 = new point3D(); // origin
-        System.out.println("Enter (x,y,z) : ");
-        System.out.print("x :");
-        int x = s.nextInt();
-        System.out.print("y :");
-        int y = s.nextInt();
-        System.out.print("z :");
-        int z = s.nextInt();
-        point3D P2 = new point3D(x,y,z);
-        System.out.println("The point 1 is : ");
-        P1.display();
-        System.out.println("The point 2 is : ");
-        P2.display();
-        System.out.println("The distance from origin is : " + P2.distance(P1));
-        s.close();
+        try (Scanner s = new Scanner(System.in);) {
+            point3D P1 = new point3D(); // origin
+            System.out.println("Enter (x,y,z) : ");
+            System.out.print("x :");
+            int x = s.nextInt();
+            System.out.print("y :");
+            int y = s.nextInt();
+            System.out.print("z :");
+            int z = s.nextInt();
+            point3D P2 = new point3D(x, y, z);
+            System.out.println("The point 1 is : ");
+            P1.display();
+            System.out.println("The point 2 is : ");
+            P2.display();
+            System.out.println("The distance from origin is : " + P2.distance(P1));
+            s.close();
+        }
     }
 }
 
@@ -45,12 +46,14 @@ class point3D {
         this.y = y2;
         this.z = z2;
     }
+
     double distance(point3D p) {
-        int dx = x - p.x;
-        int dy = y - p.y;
-        int dz = z - p.z;
-        return Math.sqrt(dx * dx + dy * dy + dz * dz);
+        int l = x - p.x;
+        int b = y - p.y;
+        int h = z - p.z;
+        return Math.sqrt(l * l + b * b + h * h);
     }
+
     void display() {
         System.out.println("(" + x + ", " + y + ", " + z + ")");
     }
