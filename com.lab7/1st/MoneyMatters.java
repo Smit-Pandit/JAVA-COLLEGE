@@ -6,7 +6,21 @@ import java.util.Scanner;
 public class MoneyMatters{
     public static void main(String[] args) {
         try(Scanner s = new Scanner(System.in)){
-            
+            System.out.println("Enter principal amount : ");
+            int principal = s.nextInt();
+            System.out.println("Enter simple annual interest rate : ");
+            int interest = s.nextInt();
+            System.out.println("Enter number of months : ");
+            int time = s.nextInt();
+            int i = interest/12;
+            bank b = new bank();
+            System.out.println("The total Amount of Interest Accumulated is : " + b.calcInterest(principal,i,time));
         }
+    }
+}
+class bank{
+    int calcInterest(int p,int r,int t){
+        int SI = p*r*t/100;
+        return SI;
     }
 }
