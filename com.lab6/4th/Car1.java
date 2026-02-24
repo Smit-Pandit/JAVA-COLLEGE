@@ -22,7 +22,6 @@ public class Car1 {
 }
 
 abstract class car{
-    final String m = "True Value";
     public void show(){
         System.out.println("Do Something");
     }
@@ -42,10 +41,10 @@ class Maruti extends car{
 class Santro extends car{
     @Override
     public void avg(){
-        System.out.println("Santro average is close to 0");
+        System.out.println("Santro average is close to 1km");
     }
     @Override
     public void mode(){
-        System.out.println("Santro mode is auto");
+        System.out.println("Santro mode is manual");
     }
 }
