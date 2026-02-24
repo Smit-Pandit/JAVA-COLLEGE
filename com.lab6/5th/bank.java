@@ -39,6 +39,7 @@ public class bank {
                     }
                 }
             }
+            s.close();
         }
     }
 }
@@ -49,7 +50,7 @@ class BankMethod {
         setBal(bal);
         setAmount(amt);
     }
-    void setBal(long bal) {
+    final void setBal(long bal) {
         if (bal < 0) {
             System.out.println("INVALID");
             balance = 0;
@@ -57,7 +58,7 @@ class BankMethod {
             balance = bal;
         }
     }
-    void setAmount(long amt) {
+    final void setAmount(long amt) {
         if (amt < 0 ) {
             System.out.println("INVALID");
             amount = 0;
@@ -65,7 +66,7 @@ class BankMethod {
             amount = amt;
         }
     }
-    void setAmountW(long amt){
+    final void setAmountW(long amt){
         if (amt < 0 || amt > balance) {
             System.out.println("INVALID");
             amount = 0;
