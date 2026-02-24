@@ -2,7 +2,9 @@
 // method.Maruti and santro are subclass implements the abstrat method of super class and methods are avg() and
 // mode().Create a class Car1 to use all the features of abstract method by creating a reference to it and referring to
 // the subclass object.
+
 public class Car1 {
+
     public static void main(String[] args) {
 
         // reference of abstract class, object of Maruti
@@ -21,30 +23,39 @@ public class Car1 {
     }
 }
 
-abstract class car{
-    public void show(){
+abstract class car {
+
+    public void show() {
         System.out.println("Do Something");
     }
+
     public abstract void avg();
+
     public abstract void mode();
 }
-class Maruti extends car{
+
+class Maruti extends car {
+
     @Override
-    public void avg(){
+    public void avg() {
         System.out.println("Maruti average is also close to 0");
     }
+
     @Override
-    public void mode(){
+    public void mode() {
         System.out.println("Maruti mode is auto");
     }
 }
-class Santro extends car{
+
+class Santro extends car {
+
     @Override
-    public void avg(){
+    public void avg() {
         System.out.println("Santro average is close to 1km");
     }
+
     @Override
-    public void mode(){
+    public void mode() {
         System.out.println("Santro mode is manual");
     }
 }

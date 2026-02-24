@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 //Create a Bank class with methods deposit & withdraw. 
 //The deposit method would accept attributes amount
@@ -5,18 +6,20 @@ import java.util.Scanner;
 //Similarly, the withdraw method would accept the attributes amount & balance 
 //& returns the new balance ‘balance – amount’ 
 //if balance > = amount or return 0 otherwise.
+
 public class bank {
+
     public static void main(String[] args) {
         try (Scanner s = new Scanner(System.in)) {
             System.out.print("Enter your balance : ");
             long bal = s.nextLong();
             long amt = 0;
             BankMethod B = new BankMethod(bal, amt);
-            boolean play=true;
-            while(play){
+            boolean play = true;
+            while (play) {
                 System.out.print("Enter your option\n1 - Deposit\n2 - Withdrawl\n3 - show info\n0 - Exit\n");
                 int choice = s.nextInt();
-                switch(choice){
+                switch (choice) {
                     case 0 -> {
                         B.display();
                         play = false;
@@ -33,8 +36,9 @@ public class bank {
                         B.setAmountW(amt);
                         System.out.println("The balance after Withdrawl is : " + B.withdraw());
                     }
-                    case 3 -> B.display();
-                    default-> {
+                    case 3 ->
+                        B.display();
+                    default -> {
                         System.out.println("Invalid");
                     }
                 }
@@ -45,11 +49,14 @@ public class bank {
 }
 
 class BankMethod {
+
     long balance, amount;
+
     BankMethod(long bal, long amt) {
         setBal(bal);
         setAmount(amt);
     }
+
     final void setBal(long bal) {
         if (bal < 0) {
             System.out.println("INVALID");
@@ -58,15 +65,17 @@ class BankMethod {
             balance = bal;
         }
     }
+
     final void setAmount(long amt) {
-        if (amt < 0 ) {
+        if (amt < 0) {
             System.out.println("INVALID");
             amount = 0;
         } else {
             amount = amt;
         }
     }
-    final void setAmountW(long amt){
+
+    final void setAmountW(long amt) {
         if (amt < 0 || amt > balance) {
             System.out.println("INVALID");
             amount = 0;
@@ -74,6 +83,7 @@ class BankMethod {
             amount = amt;
         }
     }
+
     long deposit() {
         balance = balance + amount;
         return balance;
@@ -83,7 +93,8 @@ class BankMethod {
         balance = balance - amount;
         return balance;
     }
-    void display(){
+
+    void display() {
         System.out.println("Your Remaining balance is : " + balance);
     }
 }
