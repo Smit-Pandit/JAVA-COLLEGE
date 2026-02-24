@@ -32,11 +32,15 @@ public class Wheels{
     }
 }
 class vehicle{
+    String thing;
+    vehicle(String t){
+        this.thing = t;
+    }
     public void maxSpeed(){
-        System.out.println("Maximum speed of vehicle is 0 km/h");
+        System.out.println("Maximum speed of "+ thing +" is 0 km/h");
     }
     public void start(){
-        System.out.println("Starting the vehicle...");
+        System.out.println("Starting the "+thing+"...");
         System.out.println("brrr..... brrr.....");
     }
     public void stop(){
@@ -48,6 +52,7 @@ class car extends vehicle{
     int speed = 0;
 
     car(String type) throws Exception {
+        super("car");
         this.type = type;
         switch (type) {
             case "sedan" -> speed = 140;
@@ -65,6 +70,7 @@ class car extends vehicle{
 class bike extends vehicle{
     int cc,speed=0;
     bike(int cc) throws Exception{
+        super("bike");
         this.cc = cc;
         switch(cc){
             case 50 -> speed = 70;
@@ -79,11 +85,12 @@ class bike extends vehicle{
     }
     @Override
     public void maxSpeed() {
-        System.out.println("Maximum speed of bike with" + cc + "cc is "+ speed + "km/h");
+        System.out.println("Maximum speed of bike with " + cc + "cc is "+ speed + "km/h");
     }
 }
 class scotter extends vehicle{
     scotter() throws Exception{
-        throw new Exception("Wrong vehicle");
+        super("scotter");
+        throw new Exception("Wrong vehicle for this era");
     }
 }
