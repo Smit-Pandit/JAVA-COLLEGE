@@ -36,6 +36,7 @@ public class Machine {
                 }
             }
         }
+        s.close();
     }
 }
 
