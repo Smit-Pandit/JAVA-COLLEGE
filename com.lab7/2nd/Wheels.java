@@ -1,0 +1,44 @@
+// Write a class vehicle .Define suitable attributes and methods. 
+// Write subclasses of Vehicle like Car, Bicycle,  Scooter.  
+// Assume suitable required attributes. 
+// Write constructor for each and define a method maxSpeed() in each  class  
+// Which prints the maximum speed of the vehicle? 
+// (Use of super keyword is expected in the constructor of  inherited classes). 
+public class Wheels{
+    public static void main(String[] args) {
+        car myCar = new car("Sedan");
+        myCar.maxSpeed();
+    }
+}
+class vehicle{
+    public void maxSpeed(){
+        System.out.println("Maximum speed of  vehicle is 0 km/h");
+    }
+    public void start(){
+        System.out.println("Starting the vehicle...");
+        System.out.println("brrr..... brrr.....");
+    }
+    public void stop(){
+        System.out.println("Turning the engine off!!");
+    }
+}
+class car extends vehicle{
+    String type;
+    int speed = 0;
+
+    public car(String type) {
+        this.type = type;
+        switch (type) {
+            case "sedan" -> speed = 140;
+            case "xuv" -> speed = 200;
+            case "super" -> speed = 300;
+            case "hyper" -> speed = 500;
+            default -> speed = 0;
+        }
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println("Maximum speed of " + type + " : "+ speed + "km/h");
+    }
+}
