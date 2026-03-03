@@ -15,16 +15,13 @@ public class quiz {
         try (Scanner s = new Scanner(System.in)) {
             final int n = 4;
             char[] correct = {'C', 'A', 'B', 'D'};
-            char[] answers = new char[8];
+            char[] answers = new char[n];
             int Correct = 0, Wrong = 0;
             int NotAnswered = 0;
             for (int i = 0; i < n; i++) {
                 System.out.print((i + 1) + ": ");
                 char ans = s.nextLine().toUpperCase().charAt(0);
-                if (ans == 'X') {
-                    answers[i] = 'X';
-                    NotAnswered++;
-                } else if (ans >= 'A' && ans <= 'D') {
+                if (ans >= 'A' && ans <= 'D') {
                     answers[i] = ans;
                     if (correct[i] == ans) {
                         Correct++;
