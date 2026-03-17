@@ -1,7 +1,6 @@
 class car extends vehicle{
     String type;
     int speed = 0;
-
     car(String type) throws Exception {
         super("car");
         this.type = type;
