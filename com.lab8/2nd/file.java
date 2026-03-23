@@ -9,7 +9,7 @@ public class file {
 
     public static void main(String[] args) {
         try (Scanner s = new Scanner(System.in)) {
-            File f = new File("C:\\project\\new\\JAVA-COLLEGE\\com.lab8\\temp", "2nd.txt");
+            File f = new File("F:\\Smit\\COLLEGE\\JAVA-COLLEGE\\src\\com.lab8\\data", "2nd.txt");
             f.createNewFile();
             System.out.println("Enter your message : ");
             String msg = s.nextLine();
@@ -21,7 +21,7 @@ public class file {
                 e.getMessage();
             }
             char[] ms = new char[msg.length()];
-            try (FileReader fr = new FileReader("C:\\project\\new\\JAVA-COLLEGE\\com.lab8\\temp\\2nd.txt")) {
+            try (FileReader fr = new FileReader("F:\\Smit\\COLLEGE\\JAVA-COLLEGE\\src\\com.lab8\\data\\2nd.txt")) {
                 fr.read(ms);
                 fr.close();
             }
