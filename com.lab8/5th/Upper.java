@@ -1,34 +1,29 @@
-
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Upper {
-
-    public static void main(String[] args) throws Exception {
-        try (Scanner s = new Scanner(System.in)) {
-            File f = new File("C:\\project\\new\\JAVA-COLLEGE\\com.lab8\\temp\\1st.txt");
-            if (f.isFile()) {
-                System.out.println("connected...");
-            } else {
-                throw new IOException("Well that was easy");
-            }
-            System.out.println("Enter the String : ");
+public class Upper{
+    public static void main(String[] args) throws IOException {
+        try(Scanner s = new Scanner(System.in)){
+            System.out.println("Enter your message : ");
             String msg = s.nextLine();
-            try (FileWriter fw = new FileWriter(f)) {
-                fw.write(msg);
+            String upperMsg = msg.substring(0,1).toUpperCase() + msg.substring(1);
+            System.out.println("message = " + upperMsg);
+            try(FileWriter fw = new FileWriter("F:\\Smit\\COLLEGE\\JAVA-COLLEGE\\src\\com.lab8\\data\\5th.txt")){
+                fw.write(upperMsg);
                 fw.flush();
-                if(fw!=null){
-                    fw.close();
-                }
+                fw.close();
             }catch(IOException e){
-                e.getMessage();
+                System.out.println("Error : " + e.getMessage());
             }
-            char[] m = new char[msg.length()];
-            try(FileReader fr = new FileReader(f)){
-                fr.read(m);
+            try(FileReader fr = new FileReader("F:\\Smit\\COLLEGE\\JAVA-COLLEGE\\src\\com.lab8\\data\\5th.txt")){
+                char ch[] = new char[upperMsg.length()];
+                fr.read(ch);
+                System.out.println("Message from file : " + String.valueOf(ch));
+                fr.close();
+            }catch(IOException e){
+                System.out.println("Error : " + e.getMessage());
             }
         }
     }
