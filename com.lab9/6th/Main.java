@@ -1,6 +1,7 @@
 
 class thread1 implements Runnable {
 
+    @Override
     public void run() {
         int a = 1, b = 1;
 
